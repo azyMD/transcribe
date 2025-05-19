@@ -7,20 +7,38 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Audio/Video Transcriber</h1>
-    <input type="file" id="fileInput">
-    <input type="text" id="language" placeholder="Optional language code (e.g., en, es)">
-    <button onclick="uploadFile()">Upload & Transcribe</button>
+  <div class="wrapper">
+    <header>
+      <h1>🎙️ Audio & Video Transcriber</h1>
+      <p>Upload your file and get a clean, AI-reviewed transcription instantly.</p>
+    </header>
 
-    <div id="result">
-      <h2>Original Transcript</h2>
-      <pre id="original"></pre>
+    <section class="upload-box">
+      <label for="fileInput">🎧 Choose Audio or Video File</label>
+      <input type="file" id="fileInput" />
 
-      <h2>Review</h2>
-      <pre id="review"></pre>
-    </div>
+      <label for="language">🌐 Language (optional)</label>
+      <input type="text" id="language" placeholder="e.g. en, es, fr..." />
+
+      <button onclick="uploadFile()">Start Transcription</button>
+    </section>
+
+    <section id="results" class="results-box hidden">
+      <div>
+        <h2>📝 Original Transcription</h2>
+        <pre id="original"></pre>
+      </div>
+      <div>
+        <h2>✅ AI Review</h2>
+        <pre id="review"></pre>
+      </div>
+    </section>
+
+    <footer>
+      <p>Powered by Whisper & GPT-4 | © 2025</p>
+    </footer>
   </div>
+
   <script src="/static/script.js"></script>
 </body>
 </html>
